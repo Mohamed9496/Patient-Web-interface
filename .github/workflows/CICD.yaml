@@ -6,7 +6,7 @@ on:
     branches:
       - main
 jobs:
- CI iti:
+ CI-iti:
   runs-on: ubuntu-latest
   steps:
   - name: clone repo
