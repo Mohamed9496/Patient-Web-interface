@@ -47,8 +47,8 @@ jobs:
         tags: mohamed846/iti:${{ github.run_number }}
  CD:
     runs-on: ubuntu-latest
-    needs:
-      - CI-iti
+    #needs:
+     # - CI-iti
     steps:
       - name: clone repo
         uses: actions/checkout@v4
