@@ -59,7 +59,7 @@ jobs:
          chmod 600 key.pem    
       - name: Install Minikube on EC2 and Deploy App
         run: |
-          # 1. Copy app.yaml to EC2
+          # 1. Copy app.yaml to EC2 
           scp -o StrictHostKeyChecking=no -i key.pem k8s/app.yaml ubuntu@13.221.90.139:/home/ubuntu/app.yaml
 
           # 2. SSH into EC2 and run full setup + deploy
