@@ -128,5 +128,5 @@ jobs:
 
             # Port forward (detached)
             sudo -E nohup kubectl port-forward service/service-web 8080:6000 > forward.log 2>&1 &
-            docker run --name test -p 7000:8000 mohamed846/iti:2
+            sudo docker run --name test -p 7000:8000 mohamed846/iti:2
           EOF
