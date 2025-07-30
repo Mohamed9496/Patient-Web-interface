@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iti-task
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task
+  template:
+    metadata:
+      labels:
+        app: task
+    spec:
+      containers:
+      - name: web-patient
+        image: mohamed846/iti:2 
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-web
+spec:
+  type: LoadBalancer
+  selector:
+    app: task
+  ports:
+    - port: 6000
+      targetPort: 8000
+      nodePort: 32000
